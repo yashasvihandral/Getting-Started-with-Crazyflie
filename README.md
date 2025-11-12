@@ -82,7 +82,7 @@ Move the file into a folder like `~/crazyflie-flight`.
 **Step 4: Power On and Connect the Drone**
 
 * **Plug the Crazyradio PA** into your computer.
-* **Connect the battery** to the Crazyflie — it will power on automatically.
+* **Connect the battery** to the Crazyflie and it should power on automatically.
 * **Wait for the LEDs to blink**, then place the drone on a flat surface.
 
 
