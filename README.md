@@ -1,50 +1,53 @@
 
 Getting Started with Crazyflie: Takeoff and Landing via Python
 
-This tutorial walks you through how to:
+This tutorial shows you how to:
 
 - **Set up your system from scratch**  
 - **Install the necessary software**  
 - **Connect your Crazyflie drone**  
-- **Run a Python script that makes the drone take off, hover, and land smoothly**
+- **Run a script that makes the drone take off, hover, and land smoothly**
 
----
 
-**What You’ll Need**
+
+**What You Need**
 
 - Crazyflie 2.1 nano quadcopter  
 - Crazyradio PA USB dongle  
 - Charged battery in the drone  
-- A macOS or Linux laptop  
-- A safe open area to fly the drone
+- A laptop running macOS or Linux  
+- A safe open area to fly
 
----
+
 
 **Step 1: Install Python 3**
 
-On macOS:
+Open your terminal and install Python 3:
 
+**macOS:**
 ```bash
 brew install python
 ````
 
-On Ubuntu:
+**Ubuntu:**
 
 ```bash
 sudo apt update
 sudo apt install python3 python3-pip
 ```
 
-**Verify installation:**
+**Verify that Python is installed:**
 
 ```bash
 python3 --version
 pip3 --version
 ```
 
----
 
-**Step 2: Set Up a Virtual Environment and Install the Library**
+
+**Step 2: Create a Virtual Environment**
+
+This will help keep your project clean and organized.
 
 **Create and activate a virtual environment:**
 
@@ -53,44 +56,39 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-**Install the Crazyflie Python library:**
+**Install the Crazyflie Python Library:**
+This gives you access to the `cflib` API to talk to the drone.
 
 ```bash
 pip install cflib
 ```
 
----
 
-**Step 3: Download and Save the Flight Script**
 
-**Create a folder and navigate into it:**
+**Step 3: Set Up the Flight Script**
+
+**Create a folder and write a script:**
 
 ```bash
 mkdir -p ~/crazyflie-flight
 cd ~/crazyflie-flight
 ```
 
-**Download the `cf_up_min.py` script:**
+Open the **cf_up_min.py** file in this repository.
+Click **Raw**, then save the page as `cf_up_min.py`.
+Move the file into a folder like `~/crazyflie-flight`.
 
-1. Open the `cf_up_min.py` file in this repository
-2. Click **Raw**
-3. Right-click and choose **Save As…**
-4. Save it into your `~/crazyflie-flight` folder
-
----
 
 **Step 4: Power On and Connect the Drone**
 
-1. **Plug in the Crazyradio PA** USB dongle
-2. **Connect the battery** to the Crazyflie (it powers on automatically)
-3. **Wait for LEDs to blink**, indicating the drone is ready
-4. **Place the drone on a flat surface**
+* **Plug the Crazyradio PA** into your computer.
+* **Connect the battery** to the Crazyflie — it will power on automatically.
+* **Wait for the LEDs to blink**, then place the drone on a flat surface.
 
----
 
-**Step 5: Run the Flight Script**
+**Step 5: Run the Script**
 
-Make sure your virtual environment is active and you're in the correct folder:
+Make sure that your virtual environment is active and run the script:
 
 ```bash
 cd ~/crazyflie-flight
@@ -98,13 +96,10 @@ source ../venv/bin/activate
 python3 cf_up_min.py
 ```
 
----
+The drone will:
 
-**What the Drone Will Do**
-
-* **Ramp up motors gradually**
+* **Ramp up motors**
 * **Take off and climb briefly**
-* **Hover in place**
-* **Land smoothly**
-* **Shut off motors completely**
-
+* **Hover**
+* **Land using a smooth easing curve**
+* **Shut off motors fully**
